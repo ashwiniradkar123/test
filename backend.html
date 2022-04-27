@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASAI INVESTORS LOCAL STORAGE</title>
+    <link rel="stylesheet" href="../Local Storage/common.css">
+    <style>
+        #navbar {
+          margin-bottom: 50px;
+         font-size: 25px;
+        }
+        #navbar {
+    display: flex;
+    justify-content: space-around;
+    font-size: 28px;
+    background-color: rgb(61, 61, 158);
+    padding: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+        
+
+
+      </style>
+</head>
+<body>
+    <div><a href="backend.html">Backend</a></div>
+    <div> <a href="frontend.html">Frontend</a></div> </div>
+    <form id="investorform">
+        <input id="name" type="text" placeholder="Enter name">
+        <input id="imageURL" type="text" placeholder="Enter image URL" >
+        <input id="companyLogo" type="text" placeholder="Enter company Logo">
+        <input  id="role" type="text" placeholder="Enter role">
+        <input type="submit"/>
+    </form>
+    
+</body>
+<script>
+    document.querySelector("#investorform").addEventListener("submit",inverstorsFun);
+     
+    var investorsArr = []
+
+    function inverstorsFun(){
+        event.preventDefault();
+
+        var investorsObj={
+            investorsImg:investorform.imageURL.value,
+            investorsRole:investorform.role.value,
+            investorscompanyLogo:investorform.companyLogo.value,
+            investorsName:investorform.name.value,
+        }
+        investorsArr.push(investorsObj)
+        console.log(investorsArr)
+        //localStorage.setItem("investorsData",JSON.stringify("investorArr"));
+
+    }
+</script>
+</html>
